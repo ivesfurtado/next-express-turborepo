@@ -3,11 +3,6 @@
   "display": "Shared Utils",
   "extends": "./base.json",
   "compilerOptions": {
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,

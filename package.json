@@ -16,15 +16,16 @@
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.5.1",
-    "@changesets/cli": "^2.29.5",
-    "turbo": "^2.5.5"
+    "@changesets/cli": "^2.29.6",
+    "turbo": "^2.5.6"
   },
   "devDependencies": {
     "@monorepo/eslint-config": "workspace:*",
-    "@types/node": "^24.0.14",
-    "eslint": "^9.31.0",
+    "@monorepo/tsconfig": "workspace:*",
+    "@types/node": "^24.3.0",
+    "eslint": "^9.34.0",
     "prettier": "^3.6.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "packageManager": "pnpm@9.12.1"
 }

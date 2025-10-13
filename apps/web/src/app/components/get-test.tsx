@@ -3,9 +3,9 @@
 import type { GetTestResponse } from "@monorepo/types";
 
 import { Card, CardContent, CardHeader } from "@monorepo/ui/components/card";
-import { cn } from "@monorepo/utils/styles";
 import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { cn } from "../../../../../packages/utils/src/styles";
 
 const GetTest = () => {
   const [test, setTest] = useState<string>("");
@@ -38,7 +38,7 @@ const GetTest = () => {
             "text-xl font-semibold",
             loading && "text-yellow-500",
             test && !error && "text-green-500",
-            error && "text-red-500",
+            error && "text-red-500"
           )}
         >
           API Connection Test

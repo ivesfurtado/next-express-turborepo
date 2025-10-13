@@ -3,11 +3,6 @@
   "display": "Nextjs App",
   "extends": "./base.json",
   "compilerOptions": {
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
     "lib": [
       "dom",
       "dom.iterable",

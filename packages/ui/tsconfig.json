@@ -1,10 +1,18 @@
 {
   "extends": "@monorepo/tsconfig/ui.json",
+  // https://stackoverflow.com/questions/58337089/extending-tsconfig-json-file-doesnt-seem-to-extend-anything
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@monorepo/ui/*": ["./src/*"]
+    }
+  },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "tailwind.config.ts",
     "eslint.config.mjs"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }

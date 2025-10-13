@@ -1,2 +1,4 @@
 {
+  "extends": "@monorepo/tsconfig/base.json",
+  "exclude": ["node_modules", "src/tests"]
 }

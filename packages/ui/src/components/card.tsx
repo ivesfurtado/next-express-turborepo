@@ -1,5 +1,6 @@
-import { cn } from "@monorepo/utils/styles";
 import * as React from "react";
+
+import { cn } from "@monorepo/utils/styles";
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -8,7 +9,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-xl border bg-card text-card-foreground shadow",
+      "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
       className
     )}
     {...props}

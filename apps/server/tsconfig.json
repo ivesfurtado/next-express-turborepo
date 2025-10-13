@@ -1,10 +1,11 @@
 {
   "extends": "@monorepo/tsconfig/express.json",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
-  "include": [
-    "src/**/*.ts",
-    "eslint.config.mjs"
-  ],
+  "include": ["src/**/*.ts", "eslint.config.mjs"],
+  "exclude": ["node_modules"]
 }

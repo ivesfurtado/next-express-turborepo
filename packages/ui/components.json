@@ -4,17 +4,18 @@
     "rsc": true,
     "tsx": true,
     "tailwind": {
-        "config": "tailwind.config.ts",
+        "config": "",
         "css": "src/styles/globals.css",
         "baseColor": "neutral",
         "cssVariables": true,
         "prefix": ""
     },
     "aliases": {
-        "components": "src/",
-        "ui": "src/",
+        "components": "@/components",
+        "hooks": "@/hooks",
+        "lib": "@monorepo/utils/styles",
         "utils": "@monorepo/utils/styles",
-        "lib": "@monorepo/utils/styles"
+        "ui": "@monorepo/ui/components"
     },
     "iconLibrary": "lucide"
 }

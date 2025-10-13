@@ -17,6 +17,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "tailwindCSS.experimental.configFile": "packages/ui/src/styles/globals.css",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
