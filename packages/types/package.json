@@ -9,10 +9,7 @@
     "lint": "eslint .",
     "check-types": "tsc --noEmit"
   },
-  "devDependencies": {
-    "@monorepo/tsconfig": "workspace:*",
-    "@monorepo/eslint-config": "workspace:*"
-  },
+  "devDependencies": {},
   "exports": {
     ".": "./src/index.ts"
   }

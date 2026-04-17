@@ -1,4 +1,4 @@
-import baseConfig from "@monorepo/eslint-config/base";
+import baseConfig from "../../eslint.config.mjs";
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [...baseConfig];

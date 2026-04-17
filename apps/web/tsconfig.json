@@ -1,6 +1,17 @@
 {
-  "extends": "@monorepo/tsconfig/next.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
     "paths": {
       "@/*": ["./src/*"],
       "@monorepo/*": ["../../packages/*/src"]
@@ -16,8 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "tailwind.config.ts",
-    "eslint.config.mjs"
+    "tailwind.config.ts"
   ],
   "exclude": ["node_modules"]
 }
