@@ -5,20 +5,14 @@ import importX from "eslint-plugin-import-x";
 import perfectionist from "eslint-plugin-perfectionist";
 import prettier from "eslint-plugin-prettier";
 import globals from "globals";
-import path from "path";
-import { fileURLToPath } from "url";
+import type { Linter } from "eslint";
 import tseslint from "typescript-eslint";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const flatCompat = new FlatCompat({ baseDirectory: __dirname });
+const flatCompat = new FlatCompat({ baseDirectory: import.meta.dirname });
 
-const tsConfig = /** @type {import("eslint").Linter.Config[]} */ (
-  tseslint.configs.strict
-);
+const tsConfig = tseslint.configs.strict as Linter.Config[];
 
-/** @type {import("eslint").Linter.Config[]} */
-export default [
+const config: Linter.Config[] = [
   eslint.configs.recommended,
   ...tsConfig,
   eslintConfigPrettier,
@@ -119,3 +113,5 @@ export default [
     },
   },
 ];
+
+export default config;

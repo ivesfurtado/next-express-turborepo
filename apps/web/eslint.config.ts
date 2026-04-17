@@ -1,11 +1,11 @@
 import next from "@next/eslint-plugin-next";
+import type { Linter } from "eslint";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-import baseConfig from "../../eslint.config.mjs";
+import baseConfig from "../../eslint.config.ts";
 
-/** @type {import("eslint").Linter.Config[]} */
-export default [
+const config: Linter.Config[] = [
   ...baseConfig,
   next.configs["core-web-vitals"],
   {
@@ -63,3 +63,5 @@ export default [
     },
   },
 ];
+
+export default config;
