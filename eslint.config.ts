@@ -1,23 +1,21 @@
-import { fixupPluginRules } from "@eslint/compat";
+import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
-import _import from "eslint-plugin-import";
+import importX from "eslint-plugin-import-x";
 import perfectionist from "eslint-plugin-perfectionist";
 import prettier from "eslint-plugin-prettier";
 import globals from "globals";
+import type { Linter } from "eslint";
 import tseslint from "typescript-eslint";
 
-import flatCompat from "./compat.js";
+const flatCompat = new FlatCompat({ baseDirectory: import.meta.dirname });
 
-const tsConfig = /** @type {import("eslint").Linter.Config[]} */ (
-  tseslint.configs.strict
-);
+const tsConfig = tseslint.configs.strict as Linter.Config[];
 
-/** @type {import("eslint").Linter.Config[]} */
-export default [
+const config: Linter.Config[] = [
   eslint.configs.recommended,
   ...tsConfig,
-  eslintConfigPrettier.rules,
+  eslintConfigPrettier,
   perfectionist.configs["recommended-natural"],
   ...flatCompat.plugins("eslint-plugin-only-warn"),
   {
@@ -34,7 +32,7 @@ export default [
     },
     plugins: {
       "@typescript-eslint": tseslint.plugin,
-      import: fixupPluginRules(_import),
+      "import-x": importX,
       prettier,
     },
   },
@@ -77,7 +75,7 @@ export default [
         },
       ],
       "arrow-body-style": "off",
-      "import/no-anonymous-default-export": "off",
+      "import-x/no-anonymous-default-export": "off",
       "no-duplicate-imports": "error",
       "no-unused-vars": "off",
       "perfectionist/sort-objects": [
@@ -100,10 +98,10 @@ export default [
       ],
     },
     settings: {
-      "import/parsers": {
+      "import-x/parsers": {
         "@typescript-eslint/parser": [".ts", ".tsx"],
       },
-      "import/resolver": {
+      "import-x/resolver": {
         node: {
           extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
@@ -115,3 +113,5 @@ export default [
     },
   },
 ];
+
+export default config;

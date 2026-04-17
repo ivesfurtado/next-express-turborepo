@@ -1,10 +1,10 @@
+import type { Linter } from "eslint";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-import baseConfig from "./base.js";
+import baseConfig from "../../eslint.config.ts";
 
-/** @type {import("eslint").Linter.Config[]} */
-export default [
+const config: Linter.Config[] = [
   ...baseConfig,
   {
     languageOptions: {
@@ -21,14 +21,8 @@ export default [
     plugins: {
       "@typescript-eslint": tseslint.plugin,
     },
-    rules: {
-      "react/prop-types": "off",
-      "react/react-in-jsx-scope": "off",
-    },
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
+
   },
 ];
+
+export default config;

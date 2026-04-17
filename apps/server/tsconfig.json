@@ -1,11 +1,28 @@
 {
-  "extends": "@monorepo/tsconfig/express.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs",
+      "moduleResolution": "Node10"
+    }
+  },
   "compilerOptions": {
+    "target": "ES2022",
+    "verbatimModuleSyntax": false,
+    "module": "NodeNext",
+    "sourceMap": true,
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "strict": true,
+    "rootDir": "./src",
     "outDir": "./dist",
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["src/**/*.ts", "eslint.config.mjs"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }

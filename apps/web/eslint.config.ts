@@ -1,22 +1,13 @@
-import { fixupConfigRules } from "@eslint/compat";
 import next from "@next/eslint-plugin-next";
+import type { Linter } from "eslint";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-import baseConfig from "./base.js";
-import flatCompat from "./compat.js";
+import baseConfig from "../../eslint.config.ts";
 
-const nextConfig = /** @type {import("eslint").Linter.Config[]} */ (
-  fixupConfigRules(
-    /** @type {import("@eslint/compat").FixupConfigArray} */
-    (flatCompat.config(next.configs["core-web-vitals"])),
-  )
-);
-
-/** @type {import("eslint").Linter.Config[]} */
-export default [
+const config: Linter.Config[] = [
   ...baseConfig,
-  ...nextConfig,
+  next.configs["core-web-vitals"],
   {
     languageOptions: {
       globals: {
@@ -35,13 +26,10 @@ export default [
       next,
     },
     rules: {
-      // Next.js specific rules
       "@next/next/no-html-link-for-pages": "off",
       "@next/next/no-img-element": "off",
-      // TypeScript specific rules
       "@typescript-eslint/array-type": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
-
       "@typescript-eslint/consistent-type-imports": [
         "warn",
         {
@@ -50,21 +38,14 @@ export default [
         },
       ],
       "@typescript-eslint/no-empty-function": "off",
-
-      // Import/Export rules
-      "import/no-default-export": "off",
-      "import/prefer-default-export": "off",
-
-      "react/display-name": "off",
-      "react/prop-types": "off",
-      // React specific rules
-      "react/react-in-jsx-scope": "off",
+      "import-x/no-default-export": "off",
+      "import-x/prefer-default-export": "off",
     },
     settings: {
-      "import/parsers": {
+      "import-x/parsers": {
         "@typescript-eslint/parser": [".ts", ".tsx"],
       },
-      "import/resolver": {
+      "import-x/resolver": {
         node: {
           extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
@@ -73,9 +54,8 @@ export default [
           project: ["./tsconfig.json"],
         },
       },
-      react: {
-        version: "detect",
-      },
     },
   },
 ];
+
+export default config;
