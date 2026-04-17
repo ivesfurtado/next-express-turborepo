@@ -40,9 +40,6 @@ const config: Linter.Config[] = [
       "@typescript-eslint/no-empty-function": "off",
       "import-x/no-default-export": "off",
       "import-x/prefer-default-export": "off",
-      "react/display-name": "off",
-      "react/prop-types": "off",
-      "react/react-in-jsx-scope": "off",
     },
     settings: {
       "import-x/parsers": {
@@ -56,9 +53,6 @@ const config: Linter.Config[] = [
           alwaysTryTypes: true,
           project: ["./tsconfig.json"],
         },
-      },
-      react: {
-        version: "detect",
       },
     },
   },

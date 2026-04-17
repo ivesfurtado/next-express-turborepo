@@ -20,7 +20,6 @@
     "turbo": "^2.9.6"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.5",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
     "@types/node": "^25.6.0",
@@ -28,6 +27,7 @@
     "@typescript-eslint/parser": "^8.58.2",
     "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-only-warn": "^1.2.1",
     "eslint-plugin-perfectionist": "^5.8.0",
