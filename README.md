@@ -68,7 +68,7 @@ A full-stack monorepo starter template using **Turborepo**, **Next.js**, **Expre
 | Backend  | Express.js, TypeScript                           |
 | Build    | Turborepo, pnpm workspaces                       |
 | Linting  | ESLint 10 (flat config), Prettier, perfectionist |
-| Language | TypeScript 6 (strict)                            |
+| Language | TypeScript 6                                     |
 
 ## License
 
